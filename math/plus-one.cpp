@@ -6,7 +6,6 @@ public:
         for(int i=digits.size()-1; i>=0; i--){
 
             if(i == digits.size()-1) 
-            // cout <<digits[i]<<" : "<<carry<<" : ";
                 sum = digits[i]+carry+1;
             else
                 sum = digits[i]+carry;
