@@ -14,7 +14,7 @@ public:
     bool isPalindrome(string s) {
         string plain = "";
         for(auto i: s){
-            if(isalpha(i))
+            if(isalpha(i) || isdigit(i))
                 plain+=tolower(i);
         }
         return plain == rev(plain);
