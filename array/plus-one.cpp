@@ -1,18 +1,32 @@
 class Solution {
 public:
-    vector<int> getArray(long long sum){
-        vector<int>ans;
-        while(sum != 0){
-            ans.push_back(sum%10);
-            sum/=10;
-        }
-        reverse(ans.begin(), ans.end());
-        return ans;
-    }
+
     vector<int> plusOne(vector<int>& digits) {
-        long long sum = 0;
-        for(auto i: digits) sum= sum *10 + i;
-        sum+=1;
-        return getArray(sum);
+        int carry=0, sum = 0;
+        for(int i=digits.size()-1; i>=0; i--){
+
+            if(i == digits.size()-1) 
+            // cout <<digits[i]<<" : "<<carry<<" : ";
+                sum = digits[i]+carry+1;
+            else
+                sum = digits[i]+carry;
+            
+            if(sum > 9){
+                digits[i] = sum%10;
+                carry = sum/10;
+            }
+            else{
+                digits[i] = sum;
+                carry=0;
+            }
+
+        }
+        if(carry > 0){
+            vector<int>ans;
+            ans.push_back(carry);
+            for(auto i: digits) ans.push_back(i);
+            return ans;
+        }
+        return digits;
     }
 };
