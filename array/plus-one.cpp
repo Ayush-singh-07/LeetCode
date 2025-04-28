@@ -6,13 +6,15 @@ public:
         for (int i = digits.size() - 1; i >= 0; i--) {
             if (i == digits.size() - 1)
                 carry++;
+                
             int x = digits[i] + carry;
-            carry = 0;
+            
             if (x > 9) {
                 digits[i] = x % 10;
                 carry = x / 10;
             } else {
                 digits[i] = x;
+                carry = 0;
             }
         }
         if(carry > 0){
