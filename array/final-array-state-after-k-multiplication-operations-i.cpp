@@ -6,7 +6,7 @@ public:
         int replace_from = -1; // index
         int mini = INT_MAX;
 
-        for (int j = 0; j < k+1; j++) {
+        for (int j = 0; j < k + 1; j++) {
             if (to_replace != -1 && replace_from != -1) {
                 to_replace *= multiplier;
                 nums[replace_from] = to_replace;
